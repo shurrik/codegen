@@ -1,0 +1,60 @@
+/*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
+[
+	{
+		"Database":
+		{
+			"dbServer":"String#100#0#0#地址",		
+			"dbPort":"String#10#0#0#端口",
+			"dbType":"String#10#0#0#数据库类型",
+			"dbVersion":"String#10#0#0#数据库版本",
+			"dbName":"String#20#0#0#数据库",
+			"tableSpace":"String#20#0#0#表空间",
+			"dbUser":"String#100#0#0#用户名",
+			"dbPw":"String#100#0#0#密码",
+			"remark":"String#200#0#0#备注",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"			
+		}
+	},
+	{
+		"Report":
+		{
+			"name":"String#100#0#0#报表说明",
+			"remark":"String#200#0#0#备注",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"			
+		}
+	},
+	{
+		"ReportPeriod":
+		{
+			"repId":"String#100#0#0#报表Id",		
+			"year":"Integer#0#0#0#年份",
+			"month":"String#10#0#0#月份",
+			"startDate":"Date#0#0#0#开始时间",
+			"endDate":"Date#0#0#0#结束时间",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"			
+		}
+	},		
+	{
+		"ReportData":
+		{
+			"repId":"String#100#0#0#报表Id",
+			"periodId":"String#100#0#0#报表周期Id",
+			"key":"String#100#0#0#键",
+			"val":"Integer#0#0#0#值",
+			"createDate":"Date#0#0#0#创建时间"
+		}
+	},									
+]
+
+

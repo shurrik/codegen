@@ -1,0 +1,58 @@
+<#assign corpName = conf.corpName>
+<#assign projectName = conf.projectName>
+<#assign moduleName = conf.moduleName>
+<#assign className = classObject.className>
+<#assign className_lower_case = classObject.className?lower_case>
+<#assign className_uncap_first = classObject.className?uncap_first>
+<#macro wwwroot>${r"${wwwroot}"}</#macro>
+<#macro rowfield field>${r"${(row."}${field!}${r")!}"}</#macro>
+<#macro objfield obj field>${r"${("}${obj!}${r"."}${field}${r")!}"}</#macro>
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/list" method="post">
+        <input type="hidden" name="pageSize" value="${(pageParam.pageSize)!}">
+        <input type="hidden" name="pageCurrent" value="${(pageParam.pageCurrent)!}">
+        <input type="hidden" name="orderField" value="${(pageParam.orderField)!}">
+        <input type="hidden" name="orderDirection" value="${(pageParam.orderDirection)!}">
+        <div class="bjui-searchBar">
+		<#list classObject.properties as property>
+			<label>${(property.comment)!}：</label><input type="text" id="${(property.name)!}" name="${(property.name)!}" value="<@objfield obj=className_uncap_first field=property.name/>"  class="form-control" size="10">&nbsp;				    			
+        </#list>        
+            <button type="submit" class="btn-default" data-icon="search">查询</button>&nbsp;
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+        </div>
+    </form>
+</div>
+<div class="bjui-pageContent">
+    <div class="bjui-headBar">
+        <ul>
+            <li class="left"><button type="button" class="btn-green" data-url="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/add" data-toggle="navtab" data-id="form" data-icon="plus">新增</button></li>
+            <li class="left"><button type="button" class="btn-red" data-url="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/delete?ids={#bjui-selected}" data-toggle="doajax" data-confirm-msg="确定要删除选中项吗？" data-icon="remove">删除选中行</button></li>
+        </ul>
+    </div>
+    <table data-toggle="tablefixed" data-width="100%" data-layout-h="0" data-nowrap="true" data-selected-multi="true">
+        <thead>
+            <tr>
+				<th width="50">No.</th>                
+    		<#list classObject.properties as property>
+    			<th data-order-direction="" data-order-field="${(property.name)!}">${(property.comment)!}</th>               
+            </#list>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        ${r"<#list pageCtx.rows as row>"}
+        	<tr data-id="${r'${(row.id)!}'}">
+				<td>${r"${(row_index+1)!}"}</td>	        	
+			<#list classObject.properties as property>
+				<td><@rowfield field=property.name/></td>	    			
+            </#list>	                
+                <td>
+                    <a href="<@wwwroot/>/${moduleName!}/${(className_lower_case)!}/edit?id=${r'${(row.id)!}'}" class="btn btn-blue" data-toggle="navtab" data-id="form" data-reload-warn="本页已有打开的内容，确定将刷新本页内容，是否继续？" data-title="编辑">编辑</a>
+                    <a href="<@wwwroot/>/${moduleName!}/${(className_lower_case)!}/delete?ids=${r'${(row.id)!}'}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删</a>
+                </td>	        	
+        	</tr>
+		${r"</#list>"}	        	
+        </tbody>
+    </table>  
+ 	${r"<@p.pagination pageCtx=pageCtx pageParam=pageParam/>"}
+</div>
