@@ -28,6 +28,7 @@ public class Generator {
 		System.out.println(conf.getCorpName());
 		System.out.println(conf.getProjectName());
 		System.out.println(conf.getModuleName());
+		System.out.println(conf.getAuthor());
 		
 		for(ClassObject co:classObjectList)
 		{
@@ -43,6 +44,11 @@ public class Generator {
 			generateAction(model);
 			generateViewList(model);
 			generateViewEdit(model);
+			
+			//ng
+			generateNgRest(model);
+			generateNgCtrl(model);
+			generateNgHtml(model);
 		}
 		
 		Map<String, Object> model = new HashMap();
@@ -142,6 +148,38 @@ public class Generator {
 		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_RELATIVE_VIEW_PATH.toLowerCase();
 		fileHelper.createFile(outputPath+co.getClassName().toLowerCase()+"/", "edit", content, "ftl");
 	}
+	
+	public static void generateNgRest(Map<String, Object> model) throws IOException, TemplateException
+	{
+		ClassObject co = (ClassObject) model.get("classObject");
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_REST_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_REST_PATH.toLowerCase();
+//		fileHelper.createFile(outputPath+co.getClassName().toLowerCase()+"/", "edit", content, "ftl");
+		fileHelper.createFile(outputPath, co.getClassName()+"RestAPI", content, "java");
+	}
+	
+	public static void generateNgCtrl(Map<String, Object> model) throws IOException, TemplateException
+	{
+		ClassObject co = (ClassObject) model.get("classObject");
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_CTRL_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_CTRL_PATH.toLowerCase();
+		fileHelper.createFile(outputPath, co.getClassName().toLowerCase()+"Ctrl", content, "js");
+	}
+	
+	public static void generateNgHtml(Map<String, Object> model) throws IOException, TemplateException
+	{
+		ClassObject co = (ClassObject) model.get("classObject");
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_HTML_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_HTML_PATH.toLowerCase();
+		fileHelper.createFile(outputPath+co.getClassName().toLowerCase()+"/", "list", content, "html");
+	}
+	
 	
 	public static void generateCreateSql(Map<String, Object> model) throws IOException, TemplateException
 	{

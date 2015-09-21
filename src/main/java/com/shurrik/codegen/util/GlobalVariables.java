@@ -22,6 +22,9 @@ public class GlobalVariables {
 	public static final String VIEW_EDIT_TEMPLATE_PATH = "./template/view/edit.ftl";
 	public static final String SQL_CREATE_TEMPLATE_PATH = "./template/sql/create.ftl";	
 	
+	public static final String NG_CTRL_TEMPLATE_PATH = "./template/ng-ctrl/ctrl.ftl";
+	public static final String NG_HTML_TEMPLATE_PATH = "./template/ng-html/list.ftl";
+	public static final String NG_REST_TEMPLATE_PATH = "./template/ng-rest/api.ftl";
 	
 	public static final String OUTPUT_RELATIVE_ENTITY_PATH="/model/";
 	public static final String OUTPUT_RELATIVE_DAO_PATH="/dao/"; 
@@ -31,5 +34,9 @@ public class GlobalVariables {
 	public static final String OUTPUT_RELATIVE_MANAGER_PATH="/manager/";
 	public static final String OUTPUT_RELATIVE_ACTION_PATH="/action/";
 	public static final String OUTPUT_RELATIVE_VIEW_PATH="/view/";
+	public static final String OUTPUT_NG_CTRL_PATH="/ng-ctrl/";
+	public static final String OUTPUT_NG_HTML_PATH="/ng-html/";
+	public static final String OUTPUT_NG_REST_PATH="/ng-rest/";
 	public static final String OUTPUT_RELATIVE_SQL_PATH="/sql/";	
 }
+

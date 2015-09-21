@@ -27,6 +27,7 @@ public class ProjectConfig {
 	private String projectName;
 	private String moduleName;
 	private String tablePrefix;
+	private String author;
 	
 
 	public void loadProperties(){
@@ -45,6 +46,9 @@ public class ProjectConfig {
 			}
 			if(p.getProperty("tableprefix")!=null){
 				this.setTablePrefix(p.getProperty("tableprefix"));
+			}	
+			if(p.getProperty("author")!=null){
+				this.setAuthor(p.getProperty("author"));
 			}			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -75,6 +79,12 @@ public class ProjectConfig {
 	}
 	public void setTablePrefix(String tablePrefix) {
 		this.tablePrefix = tablePrefix;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 }
