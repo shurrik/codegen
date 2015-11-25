@@ -35,7 +35,12 @@ public class JsonClassObjectHelper implements ClassObjecHelper{
 	{
 		ClassObject co = new ClassObject();
 		//setClassName
-		co.setClassName(className);
+//		co.setClassName(className);
+
+		String[] arr = className.split("#");
+		className = arr[0];
+		co.setClassName(arr[0]);
+		co.setClassRemark(arr[1]);
 		
 		//setProperties
 		//setColumns

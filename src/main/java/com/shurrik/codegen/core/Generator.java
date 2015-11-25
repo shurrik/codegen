@@ -54,6 +54,9 @@ public class Generator {
 		Map<String, Object> model = new HashMap();
 		model.put("classObjects", classObjectList);		
 		generateCreateSql(model);
+		generateNgConstant(model);
+		generateNgRouter(model);
+		generateNgNav(model);
 	}
 	
 	public static void generateEntity(Map<String, Object> model) throws IOException, TemplateException
@@ -183,13 +186,39 @@ public class Generator {
 	
 	public static void generateCreateSql(Map<String, Object> model) throws IOException, TemplateException
 	{
-//		ClassObject co = (ClassObject) model.get("classObject");
 		FileHelper fileHelper = new FileHelper();
 		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
 		String content = fmHelper.render(model, GlobalVariables.SQL_CREATE_TEMPLATE_PATH);
 		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_RELATIVE_SQL_PATH.toLowerCase();
 		fileHelper.createFile(outputPath, "create", content, "sql");
-	}	
+	}
+
+	public static void generateNgConstant(Map<String, Object> model) throws IOException, TemplateException
+	{
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_CONSTANT_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_CONSTANT_PATH.toLowerCase();
+		fileHelper.createFile(outputPath, "config.constant", content, "js");
+	}
+
+	public static void generateNgRouter(Map<String, Object> model) throws IOException, TemplateException
+	{
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_ROUTER_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_ROUTER_PATH.toLowerCase();
+		fileHelper.createFile(outputPath, "config.router", content, "js");
+	}
+
+	public static void generateNgNav(Map<String, Object> model) throws IOException, TemplateException
+	{
+		FileHelper fileHelper = new FileHelper();
+		FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+		String content = fmHelper.render(model, GlobalVariables.NG_NAV_TEMPLATE_PATH);
+		String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_NG_NAV_PATH.toLowerCase();
+		fileHelper.createFile(outputPath, "nav", content, "html");
+	}
 	
 	/**	从json文件获取类对象队列
 	 * @return

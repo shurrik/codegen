@@ -2,6 +2,7 @@
 <#assign projectName = conf.projectName>
 <#assign moduleName = conf.moduleName>
 <#assign className = classObject.className>
+<#assign classRemark = classObject.classRemark>
 <#assign className_lower_case = classObject.className?lower_case>
 <#assign className_uncap_first = classObject.className?uncap_first>
 <#macro wwwroot>${r"${wwwroot}"}</#macro>
@@ -12,8 +13,8 @@
 <section id="page-title">
     <div class="row">
         <div class="col-sm-8">
-            <h1 class="mainTitle" translate="数据库">{{ mainTitle }}</h1>
-            <span class="mainDescription">数据库</span>
+            <h1 class="mainTitle" translate="${classRemark}">{{ mainTitle }}</h1>
+            <span class="mainDescription">${classRemark}</span>
         </div>
         <div ncy-breadcrumb></div>
     </div>

@@ -1,7 +1,7 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
 [
 	{
-		"Database":
+		"Database#数据库":
 		{
 			"dbServer":"String#100#0#0#地址",		
 			"dbPort":"String#10#0#0#端口",
@@ -21,146 +21,96 @@
 		}
 	},
 	{
-		"Report":
+		"Host#主机":
 		{
-			"name":"String#100#0#0#报表说明",
+			"ip":"String#20#0#0#IP",
+			"name":"String#100#0#0#主机名",
+			"user":"String#10#0#0#用户",
+			"password":"String#10#0#0#密码",
+			"remark":"String#200#0#0#备注",
+			"taskerFlag":"Boolean#1#0#0#是否执行节点",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"
+		}
+	},
+	{
+		"Artifact#构件":
+		{
+			"actType":"String#20#0#0#构件类型",
+			"name":"String#100#0#0#名称",
+			"path":"String#200#0#0#路径",
+			"size":"Integer#10#0#0#文件大小",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"
+		}
+	},
+	{
+		"Template#模板":
+		{
+			"name":"String#100#0#0#名称",
+			"clazz":"String#100#0#0#模板类",
+			"actType":"String#20#0#0#构件类型",
 			"remark":"String#200#0#0#备注",
 			"createrId":"String#64#0#1#创建人ID",
 			"createrName":"String#100#0#1#创建人名",
 			"updaterId":"String#64#0#1#更新人ID",
 			"updaterName":"String#100#0#1#更新人名",
 			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
+			"updateDate":"Date#0#0#0#更新时间"
 		}
 	},
 	{
-		"ReportPeriod":
+		"Step#步骤":
 		{
-			"repId":"String#100#0#0#报表Id",		
-			"year":"Integer#0#0#0#年份",
-			"month":"String#10#0#0#月份",
-			"startDate":"Date#0#0#0#开始时间",
-			"endDate":"Date#0#0#0#结束时间",
+			"remark":"String#200#0#0#备注",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
 			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
+			"updateDate":"Date#0#0#0#更新时间"
 		}
-	},		
+	},
 	{
-		"ReportData":
+		"Command#命令":
 		{
-			"repId":"String#100#0#0#报表Id",
-			"periodId":"String#100#0#0#报表周期Id",
-			"repKey":"String#100#0#0#键",
-			"repVal":"Integer#0#0#0#值",
+			"script":"String#20#0#0#脚本",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"updaterId":"String#64#0#1#更新人ID",
+			"updaterName":"String#100#0#1#更新人名",
+			"createDate":"Date#0#0#0#创建时间",
+			"updateDate":"Date#0#0#0#更新时间"
+		}
+	},
+	{
+		"TemplateStep#模板步骤":
+		{
+			"tplId":"String#20#0#0#模板ID",
+			"stepId":"String#200#0#0#步骤ID",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
 			"createDate":"Date#0#0#0#创建时间"
 		}
 	},
 	{
-		"Query":
+		"StepCommand#步骤命令":
 		{
-			"dbId":"String#64#0#1#数据库ID",
-			"repId":"String#100#0#0#报表Id",
+			"stepId":"String#20#0#0#步骤ID",
+			"cmdId":"String#200#0#0#动作ID",
 			"createrId":"String#64#0#1#创建人ID",
 			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},	
-	{
-		"QueryTable":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"tbName":"String#100#0#1#表名",
-			"alias":"String#100#0#1#随机别名",
-			"remark":"String#100#0#1#注释",		
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},	
-	{
-		"QuerySelect":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"tbName":"String#100#0#1#表名",
-			"alias":"String#100#0#1#随机别名",	
-			"col":"String#100#0#1#列",
-			"remark":"String#100#0#1#注释",						
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
+			"createDate":"Date#0#0#0#创建时间"
 		}
 	},
-	{
-		"QueryJoin":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"tbNameL":"String#100#0#1#表名A",	
-			"colL":"String#100#0#1#列A",
-			"tbNameR":"String#100#0#1#表名B",	
-			"colR":"String#100#0#1#列B",						
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},
-	{
-		"QueryWhere":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"tbName":"String#100#0#1#表名",	
-			"col":"String#100#0#1#列",
-			"formula":"String#5#0#1#公式",
-			"val":"String#100#0#1#值",
-			"colType":"String#50#0#1#类型",
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},
-	{
-		"QueryTime":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"tbName":"String#100#0#1#表名",	
-			"col":"String#100#0#1#列",			
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},
-	{
-		"Index":
-		{
-			"qryId":"String#64#0#1#queryID",
-			"indexX":"String#100#0#1#维度列",	
-			"indexY":"String#100#0#1#指标列",			
-			"func":"String#50#0#1#函数",
-			"createrId":"String#64#0#1#创建人ID",
-			"createrName":"String#100#0#1#创建人名",
-			"updaterId":"String#64#0#1#更新人ID",
-			"updaterName":"String#100#0#1#更新人名",
-			"createDate":"Date#0#0#0#创建时间",
-			"updateDate":"Date#0#0#0#更新时间"			
-		}
-	},															
 ]
 
 

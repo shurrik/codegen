@@ -25,6 +25,9 @@ public class GlobalVariables {
 	public static final String NG_CTRL_TEMPLATE_PATH = "./template/ng-ctrl/ctrl.ftl";
 	public static final String NG_HTML_TEMPLATE_PATH = "./template/ng-html/list.ftl";
 	public static final String NG_REST_TEMPLATE_PATH = "./template/ng-rest/api.ftl";
+	public static final String NG_CONSTANT_TEMPLATE_PATH = "./template/ng-constant/config.constant.ftl";
+	public static final String NG_ROUTER_TEMPLATE_PATH = "./template/ng-router/config.router.ftl";
+	public static final String NG_NAV_TEMPLATE_PATH = "./template/ng-nav/nav.ftl";
 	
 	public static final String OUTPUT_RELATIVE_ENTITY_PATH="/model/";
 	public static final String OUTPUT_RELATIVE_DAO_PATH="/dao/"; 
@@ -37,6 +40,9 @@ public class GlobalVariables {
 	public static final String OUTPUT_NG_CTRL_PATH="/ng-ctrl/";
 	public static final String OUTPUT_NG_HTML_PATH="/ng-html/";
 	public static final String OUTPUT_NG_REST_PATH="/ng-rest/";
+	public static final String OUTPUT_NG_CONSTANT_PATH="/ng-constant/";
+	public static final String OUTPUT_NG_ROUTER_PATH="/ng-router/";
+	public static final String OUTPUT_NG_NAV_PATH="/ng-nav/";
 	public static final String OUTPUT_RELATIVE_SQL_PATH="/sql/";	
 }
 

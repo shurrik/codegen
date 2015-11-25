@@ -8,6 +8,7 @@ import java.util.List;
 public class ClassObject {
 
 	private String className;//类名
+	private String classRemark;
 	private List<ClassProperty> properties;//类属性
 	private String tableName;//数据库表名
 	private List<Column> columns;//数据表子段
@@ -17,6 +18,12 @@ public class ClassObject {
 	}
 	public void setClassName(String className) {
 		this.className = className;
+	}
+	public String getClassRemark() {
+		return classRemark;
+	}
+	public void setClassRemark(String classRemark) {
+		this.classRemark = classRemark;
 	}
 	public List<ClassProperty> getProperties() {
 		return properties;

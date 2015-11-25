@@ -5,10 +5,9 @@
 <#assign className_lower_case = classObject.className?lower_case>
 <#assign className_uncap_first = classObject.className?uncap_first>
 <#macro id>${r"#{id}"}</#macro>
-<#macro create_time>${r"#{create_time}"}</#macro>
-<#macro proname name>${r"#{"}${name!}${r"}"}</#macro>
+<#macro proname name><#if name='createDate'||name='updateDate'>sysdate()<#else>${r"#{"}${name!}${r"}"}</#if></#macro>
 <#macro map id>${r"#{map."}${id!}${r"}"}</#macro>
-<#macro map name>${r"#{map."}${name!}${r"}"}</#macro>
+<#macro map name><#if name='createDate'||name='updateDate'>sysdate()<#else>${r"#{map."}${name!}${r"}"}</#if></#macro>
 <#macro condition name>${r"$ {condition."}${name!}${r"}"}</#macro>
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
