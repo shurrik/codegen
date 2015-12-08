@@ -6,6 +6,7 @@
 <#assign className_uncap_first = classObject.className?uncap_first>
 <#macro wwwroot>${r"${wwwroot}"}</#macro>
 <#macro rowfield field>${r"${(row."}${field!}${r")!}"}</#macro>
+<#macro rowfieldDate field>${r"${(row."}${field!}${r"?string('yyyy-MM-dd HH:mm:ss'))!}"}</#macro>
 <#macro objfield obj field>${r"${("}${obj!}${r"."}${field}${r")!}"}</#macro>
 <div class="bjui-pageHeader">
     <div class="toolBar">
@@ -44,7 +45,11 @@
         	<tr data-id="${r'${(row.id)!}'}">
 				<td>${r"${(row_index+1)!}"}</td>	        	
 			<#list classObject.properties as property>
-				<td><@rowfield field=property.name/></td>	    			
+             <#if property.type='Date'>
+                 <td title="<@rowfieldDate field=property.name/>"><@rowfieldDate field=property.name/></td>
+             <#else>
+                 <td title="<@rowfield field=property.name/>"><@rowfield field=property.name/></td>
+             </#if>
             </#list>	                
                 <td>
                     <a href="<@wwwroot/>/${moduleName!}/${(className_lower_case)!}/edit?id=${r'${(row.id)!}'}" class="btn btn-blue" data-toggle="navtab" data-id="form" data-reload-warn="本页已有打开的内容，确定将刷新本页内容，是否继续？" data-title="编辑">编辑</a>

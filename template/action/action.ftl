@@ -25,6 +25,7 @@ import com.${corpName}.${projectName}.service.I${className}Service;
 import com.${corpName}.common.utils.IdGenerator;
 import com.${corpName}.common.utils.JsonResult;
 import com.${corpName}.common.utils.PageParam;
+import com.${corpName}.common.utils.Constants;
 
 @Controller
 public class ${className}Action extends AbstractAdminController<I${className}Service>{
@@ -70,7 +71,7 @@ public class ${className}Action extends AbstractAdminController<I${className}Ser
 		{
 			${className_uncap_first}Service.update(${className_uncap_first});
 		}
-    	return JsonResult.saveSuccessClose(getMainObjName()).toString();
+        return JsonResult.saveSuccessClose(Constants.MAIN_TAB).toString();
     }    
     
     @RequestMapping(value="/${className_lower_case}/delete")
