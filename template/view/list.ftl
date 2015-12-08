@@ -8,6 +8,12 @@
 <#macro rowfield field>${r"${(row."}${field!}${r")!}"}</#macro>
 <#macro objfield obj field>${r"${("}${obj!}${r"."}${field}${r")!}"}</#macro>
 <div class="bjui-pageHeader">
+    <div class="toolBar">
+        <div class="btn-group" role="group" aria-label="操作栏">
+            <a type="utton" class="btn btn-success" href="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/add" data-toggle="navtab" data-id="form"><i class="fa fa-plus"></i>新增</a>
+            <a type="button" class="btn btn-danger" href="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/delete?ids={#bjui-selected}" data-toggle="doajax" data-confirm-msg="确定要删除选中项吗？" data-id="form" data-mask="true"><i class="fa fa-trash-o"></i>删除选中行</a>
+        </div>
+    </div>
     <form id="pagerForm" data-toggle="ajaxsearch" action="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/list" method="post">
         <input type="hidden" name="pageSize" value="${(pageParam.pageSize)!}">
         <input type="hidden" name="pageCurrent" value="${(pageParam.pageCurrent)!}">
@@ -23,12 +29,6 @@
     </form>
 </div>
 <div class="bjui-pageContent">
-    <div class="bjui-headBar">
-        <ul>
-            <li class="left"><button type="button" class="btn-green" data-url="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/add" data-toggle="navtab" data-id="form" data-icon="plus">新增</button></li>
-            <li class="left"><button type="button" class="btn-red" data-url="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/delete?ids={#bjui-selected}" data-toggle="doajax" data-confirm-msg="确定要删除选中项吗？" data-icon="remove">删除选中行</button></li>
-        </ul>
-    </div>
     <table data-toggle="tablefixed" data-width="100%" data-layout-h="0" data-nowrap="true" data-selected-multi="true">
         <thead>
             <tr>

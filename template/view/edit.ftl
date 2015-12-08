@@ -21,11 +21,11 @@
                 </tbody>
             </table>
         </div>
-        <div class="bjui-footBar">
-            <ul>
-                <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
-                <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
-            </ul>
-        </div>
     </form>
+</div>
+<div class="bjui-pageFooter" >
+    <ul>
+        <li><button type="button" class="btn btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn btn-success" data-icon="save">保存</button></li>
+    </ul>
 </div>

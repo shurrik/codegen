@@ -39,3 +39,4 @@ gradle/
 *.class
 classes/
 build/
+output/

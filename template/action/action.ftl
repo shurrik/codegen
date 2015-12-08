@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.${corpName}.common.domain.view.BizData4Page;
 import com.${corpName}.${projectName}.model.${className};
 import com.${corpName}.${projectName}.service.I${className}Service;
-import com.${corpName}.${projectName}.util.IdGenerator;
-import com.${corpName}.${projectName}.util.JsonResult;
-import com.${corpName}.${projectName}.util.PageParam;
+import com.${corpName}.common.utils.IdGenerator;
+import com.${corpName}.common.utils.JsonResult;
+import com.${corpName}.common.utils.PageParam;
 
 @Controller
 public class ${className}Action extends AbstractAdminController<I${className}Service>{
