@@ -6,7 +6,7 @@
 			"ip":"String#20#0#0#IP",
 			"port":"String#10#0#0#端口",
 			"dbType":"String#10#0#0#数据库类型",
-			"dbVersion":"String#10#0#0#数据库版本",
+			"dbVersion":"String#10#0#1#数据库版本",
 			"dbName":"String#20#0#0#数据库",
 			"tableSpace":"String#20#0#1#表空间",
 			"dbUser":"String#100#0#0#用户名",

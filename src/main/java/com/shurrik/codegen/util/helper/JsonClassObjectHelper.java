@@ -62,13 +62,14 @@ public class JsonClassObjectHelper implements ClassObjecHelper{
 			/*Integer cLength = Integer.parseInt(pArr[1]);*/
 			String cLength = pArr[1];
 			Boolean isPk = Integer.parseInt(pArr[2])>0?true:false;
-			Boolean notNull = Integer.parseInt(pArr[3])>0?true:false;
+			Boolean notNull = Integer.parseInt(pArr[3])<=0?true:false;
 			
 			
 			cp.setName(pName);
 			cp.setType(pType);
 			cp.setComment(comment);
 			cp.setSize(cLength);
+			cp.setNotNull(notNull);
 			
 			column.setName(cName);
 //			column.setType(cType);
