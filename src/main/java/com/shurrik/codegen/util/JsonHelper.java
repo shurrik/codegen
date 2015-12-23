@@ -1,9 +1,10 @@
 package com.shurrik.codegen.util;
 
-import java.util.List;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import java.util.List;
+
 
 /**
  * @author lip 创建于	2012-4-12	下午7:06:52 

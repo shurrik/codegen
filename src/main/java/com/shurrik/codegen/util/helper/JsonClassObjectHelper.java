@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
 
 import net.sf.json.JSONObject;
 
@@ -14,6 +13,7 @@ import com.shurrik.codegen.model.Column;
 import com.shurrik.codegen.util.CharacterCaseUtils;
 import com.shurrik.codegen.util.JsonHelper;
 import com.shurrik.codegen.util.ProjectConfig;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * @author lip 创建于 2012-4-12 下午5:36:34

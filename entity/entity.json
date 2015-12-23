@@ -95,6 +95,16 @@
 		}
 	},
 	{
+		"BizType#业务类型":
+		{
+			"bizType":"String#100#0#0#业务类型",
+			"remark":"String#200#0#1#备注",
+			"createrId":"String#64#0#1#创建人ID",
+			"createrName":"String#100#0#1#创建人名",
+			"createDate":"Date#0#0#0#创建时间"
+		}
+	},
+	{
 		"Artifact#构件":
 		{
 			"actType":"String#20#0#0#构件类型",
@@ -114,6 +124,7 @@
 		{
 			"name":"String#100#0#0#名称",
 			"clazz":"String#100#0#0#模板类",
+			"agentClazz":"String#100#0#0#代理模板类",
 			"actType":"String#20#0#0#构件类型",
 			"remark":"String#200#0#1#备注",
 			"createrId":"String#64#0#1#创建人ID",
