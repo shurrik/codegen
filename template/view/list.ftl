@@ -29,8 +29,8 @@
         </div>
     </form>
 </div>
-<div class="bjui-pageContent">
-    <table data-toggle="tablefixed" data-width="100%" data-layout-h="0" data-nowrap="true" data-selected-multi="true">
+<div class="bjui-pageContent tableContent">
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
         <thead>
             <tr>
 				<th width="50">No.</th>                
@@ -59,5 +59,5 @@
 		${r"</#list>"}	        	
         </tbody>
     </table>  
- 	${r"<@p.pagination pageCtx=pageCtx pageParam=pageParam/>"}
 </div>
+${r"<@p.pagination pageCtx=pageCtx pageParam=pageParam/>"}
