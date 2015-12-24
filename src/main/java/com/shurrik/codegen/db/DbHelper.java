@@ -93,7 +93,7 @@ public class DbHelper {
 	
 	public static void main(String[] args) {
 		//mysql
-		String url = "jdbc:mysql://localhost:3306/oa?characterEncoding=UTF-8&amp;autoReconnect=true";
+		String url = "jdbc:mysql://localhost:3306/ci?characterEncoding=UTF-8&amp;autoReconnect=true";
 		String username = "root";
 		String pw="root";	
 		

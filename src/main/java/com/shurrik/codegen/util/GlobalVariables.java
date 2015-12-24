@@ -4,6 +4,11 @@ package com.shurrik.codegen.util;
  * @author lip 创建于 2012-4-12 下午5:36:34
  */
 public class GlobalVariables {
+	public static final String MYSQL="MySQL";
+	public static final String ORACLE="Oracle";
+	public static final String MSSQL="Microsoft SQL Server";
+
+
 	public static final String OUTPUT_ENCODEING="utf-8";
 	public static final String OUTPUT_ROOTPATH="./output";
 	public static final String JSON_PATH="./entity/entity.json";
@@ -28,6 +33,8 @@ public class GlobalVariables {
 	public static final String NG_CONSTANT_TEMPLATE_PATH = "./template/ng-constant/config.constant.ftl";
 	public static final String NG_ROUTER_TEMPLATE_PATH = "./template/ng-router/config.router.ftl";
 	public static final String NG_NAV_TEMPLATE_PATH = "./template/ng-nav/nav.ftl";
+
+	public static final String ENTITY_JSON_TEMPLATE_PATH = "./template/entity/entity.ftl";
 	
 	public static final String OUTPUT_RELATIVE_ENTITY_PATH="/model/";
 	public static final String OUTPUT_RELATIVE_DAO_PATH="/dao/"; 
@@ -43,6 +50,7 @@ public class GlobalVariables {
 	public static final String OUTPUT_NG_CONSTANT_PATH="/ng-constant/";
 	public static final String OUTPUT_NG_ROUTER_PATH="/ng-router/";
 	public static final String OUTPUT_NG_NAV_PATH="/ng-nav/";
-	public static final String OUTPUT_RELATIVE_SQL_PATH="/sql/";	
+	public static final String OUTPUT_RELATIVE_SQL_PATH="/sql/";
+	public static final String OUTPUT_ENTITY_JSON_PATH="/entity/";
 }
 

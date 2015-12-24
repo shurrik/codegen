@@ -20,10 +20,10 @@ public class JsonHelper {
 		String data= fh.readFileByLines(GlobalVariables.JSON_PATH);
 		JSONArray list = JSONArray.fromObject(data);
 		/*Iterator itor = jsonObj.keySet().iterator();
-        while (itor.hasNext()) {  
-        	JSONArray entry = (JSONArray) jsonObj.get(itor.next());  
+        while (itor.hasNext()) {
+        	JSONArray entry = (JSONArray) jsonObj.get(itor.next());
             list.add(entry);
-  
+
         }  */
         return list;
 	}

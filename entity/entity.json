@@ -1,4 +1,14 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
+/*
+支持以下类型，非字符串长度都设为0
+String
+Integer
+Float
+Double
+BigDecimal
+Boolean
+Date
+*/
 [
 	{
 		"Database#数据库":

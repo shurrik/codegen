@@ -18,7 +18,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  * @author lip 创建于 2012-4-12 下午5:36:34
  */
-public class JsonClassObjectHelper implements ClassObjecHelper{
+public class JsonClassObjectHelper extends ClassObjecHelper{
 
 	/**	从json文件读取数据，转换成ClassObject队列
 	 * @return
@@ -95,53 +95,22 @@ public class JsonClassObjectHelper implements ClassObjecHelper{
 		return co;
 	}
 	
-	private String getColumnType(String propertyType)
-	{
-		String columnType ="";
-		switch (propertyType) {
-		case "String":
-			columnType = "varchar";
-			break;
-		case "Integer":
-			columnType = "int";
-			break;
-		case "Float":
-			columnType = "float";
-			break;
-		case "Double":
-			columnType = "double";
-			break;
-		case "BigDecimal":
-			columnType = "decimal";
-			break;	
-		case "Boolean":
-			columnType = "tinyint";
-			break;			
-		case "Date":
-			columnType = "datetime";
-			break;
-		default:
-			columnType = "varchar";			
-			break;
-		}
-		
-		return columnType;
-	}
+
 	
-	private void setColumns(ClassObject classObject,JSONObject jsonProperties)
-	{
-		List<Column> columns = new ArrayList();
-		Iterator itor = jsonProperties.keySet().iterator();
-		while (itor.hasNext()) {
-			Column column = new Column();
-			String propertyName = (String) itor.next();
-			String propertyType = jsonProperties.getString(propertyName);
-			column.setName(CharacterCaseUtils.toUnderlineCase(propertyName));
-			column.setType(propertyType);
-			columns.add(column);
-        }	
-		classObject.setColumns(columns);
-	}
+//	private void setColumns(ClassObject classObject,JSONObject jsonProperties)
+//	{
+//		List<Column> columns = new ArrayList();
+//		Iterator itor = jsonProperties.keySet().iterator();
+//		while (itor.hasNext()) {
+//			Column column = new Column();
+//			String propertyName = (String) itor.next();
+//			String propertyType = jsonProperties.getString(propertyName);
+//			column.setName(CharacterCaseUtils.toUnderlineCase(propertyName));
+//			column.setType(propertyType);
+//			columns.add(column);
+//        }
+//		classObject.setColumns(columns);
+//	}
 	
 	/** json类对象队列转换成ClassObject队列
 	 * @param jsonClasses
