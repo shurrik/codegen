@@ -7,16 +7,18 @@
             <table class="table table-condensed table-hover" width="100%">
                 <tbody>
                     <tr>
-					<#list classObject.properties as property>
-					<#if property_index gt 0 && property_index%3==0>
-					</tr>
-					<tr>
-					</#if>
+            <#list classObject.properties as property>
+                <#if property.name!='createDate'&&property.name!='updateDate'>
+                    <#if property_index gt 0 && property_index%3==0>
+                    </tr>
+                    <tr>
+                    </#if>
                         <td>
                             <label for="${(property.name)!}" class="control-label x85">${(property.comment)!}：</label>
                             <input type="text" name="${(property.name)!}" id="${(property.name)!}" value="${r"${("}${classObject.className?uncap_first!}${r"."}${property.name}${r")!}"}" <#if property.notNull>data-rule="required"</#if> >
-                        </td>							
-					</#list>                        
+                        </td>
+                </#if>
+            </#list>
                     </tr>
                 </tbody>
             </table>

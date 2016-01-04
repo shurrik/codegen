@@ -8,6 +8,7 @@ import com.cgs.db.util.PrintUtils;
 import com.shurrik.codegen.model.ClassObject;
 import com.shurrik.codegen.model.ClassProperty;
 import com.shurrik.codegen.model.Column;
+import com.shurrik.codegen.model.ComparatorClassObject;
 import com.shurrik.codegen.util.CharacterCaseUtils;
 import com.shurrik.codegen.util.ProjectConfig;
 import org.apache.commons.lang.StringUtils;
@@ -35,19 +36,21 @@ public class DbClassObjectHelper extends ClassObjecHelper{
         Connection conn = metaLoader.getDataSource().getConnection();
 
         Set<String> tableNames=metaLoader.getTableNames();
-        System.out.println(tableNames);
 
         Schema schema=metaLoader.getSchema();
         Map<String,Table> tables=schema.getTables();
 
 
         String dbType = getProductName(conn);
-        System.out.println(dbType);
         Set<String> keys=tables.keySet();
         for (String string : keys) {
             Table t=tables.get(string);
             classes.add(table2ClassObject(t,dbType));
         }
+
+        //排序
+        ComparatorClassObject comparator=new ComparatorClassObject();
+        Collections.sort(classes, comparator);
         return classes;
     }
 
@@ -66,12 +69,11 @@ public class DbClassObjectHelper extends ClassObjecHelper{
 
     private ClassObject table2ClassObject(Table table,String dbType)
     {
-        ClassObject co = new ClassObject();
+        ClassObject co = ClassObject.instance();
         String className = processTableName(table.getName());
         className = className.substring(0,1).toUpperCase() + className.substring(1);
         String classRemark = StringUtils.isNotBlank(table.getComment())?table.getComment():className;
         co.setClassName(className);
-        System.out.println(className);
         co.setClassRemark(classRemark);
 
 
@@ -98,7 +100,6 @@ public class DbClassObjectHelper extends ClassObjecHelper{
             Boolean isPk = false;
             Boolean notNull = column.isNullable()?false:true;
 
-            System.out.println(pType);
             pType = getPropertyType(pType,dbType);
             cp.setName(pName);
             cp.setType(pType);

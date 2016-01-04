@@ -33,7 +33,7 @@ public class JsonClassObjectHelper extends ClassObjecHelper{
 	
 	public ClassObject jsonObject2ClassObject(String className,JSONObject jsonProperties)
 	{
-		ClassObject co = new ClassObject();
+		ClassObject co = ClassObject.instance();
 		//setClassName
 //		co.setClassName(className);
 

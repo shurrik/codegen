@@ -60,6 +60,7 @@ public abstract class AbstractGenerator {
         Map<String, Object> model = new HashMap();
         model.put("classObjects", classObjectList);
         generateCreateSql(model);
+        generateResourceSql(model);
         generateNgConstant(model);
         generateNgRouter(model);
         generateNgNav(model);
@@ -193,6 +194,15 @@ public abstract class AbstractGenerator {
         String content = fmHelper.render(model, GlobalVariables.SQL_CREATE_TEMPLATE_PATH);
         String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_RELATIVE_SQL_PATH.toLowerCase();
         fileHelper.createFile(outputPath, "create", content, "sql");
+    }
+
+    public  void generateResourceSql(Map<String, Object> model) throws IOException, TemplateException
+    {
+        FileHelper fileHelper = new FileHelper();
+        FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+        String content = fmHelper.render(model, GlobalVariables.SQL_RESOURCE_TEMPLATE_PATH);
+        String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_RELATIVE_SQL_PATH.toLowerCase();
+        fileHelper.createFile(outputPath, "resource", content, "sql");
     }
 
     public  void generateNgConstant(Map<String, Object> model) throws IOException, TemplateException

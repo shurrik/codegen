@@ -1,0 +1,88 @@
+/*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
+/*
+支持以下类型，非字符串长度都设为0
+String
+Integer
+Float
+Double
+BigDecimal
+Boolean
+Date
+*/
+[
+  {
+    "Buyer#买家":
+    {
+      "nickName":"String#20#0#0#昵称",
+      "realName":"String#20#0#0#姓名",
+      "mobile":"String#20#0#0#手机",
+      "province":"String#20#0#0#省",
+      "city":"String#20#0#0#市",
+      "sex":"String#10#0#0#性别",
+      "birth":"Date#0#0#0#出生日期",
+      "consumeAmount":"BigDecimal#0#0#0#消费金额",
+      "buyerType":"String#20#0#1#买家类型",
+      "createrId":"String#64#0#1#创建人ID",
+      "createrName":"String#100#0#1#创建人名",
+      "updaterId":"String#64#0#1#更新人ID",
+      "updaterName":"String#100#0#1#更新人名",
+      "createDate":"Date#0#0#0#创建时间",
+      "updateDate":"Date#0#0#0#更新时间"
+    }
+  },
+  {
+    "BuyerAddress#买家地址":
+    {
+      "buyerId":"String#64#0#0#买家ID",
+      "receiver":"String#20#0#0#收货人",
+      "mobile":"String#20#0#0#手机",
+      "address":"String#500#0#0#地址",
+      "isDefault":"Boolean#1#0#0#是否默认",
+      "createDate":"Date#0#0#0#创建时间",
+      "updateDate":"Date#0#0#0#更新时间"
+    }
+  },
+  {
+    "Order#订单":
+    {
+      "buyerId":"String#64#0#0#买家ID",
+      "nickName":"String#20#0#0#昵称",
+      "realName":"String#20#0#0#姓名",
+      "receiver":"String#20#0#0#收货人",
+      "mobile":"String#20#0#0#手机",
+      "address":"String#500#0#0#地址",
+      "payMode":"String#200#0#0#付款方式",
+      "postType":"String#100#0#0#快递类型",
+      "postNo":"String#200#0#0#快递单号",
+      "status":"String#100#0#0#状态",
+      "postFree":"Boolean#1#0#0#是否包邮",
+      "goodsCost":"BigDecimal#0#0#0#宝贝成本",
+      "goodsPrice":"BigDecimal#0#0#0#宝贝售价",
+      "postPrice":"BigDecimal#0#0#0#邮费",
+      "sellAmount":"BigDecimal#0#0#0#销售金额",
+      "costAmount":"BigDecimal#0#0#0#成本金额",
+      "profitAmount":"BigDecimal#0#0#0#利润",
+      "createrId":"String#64#0#1#创建人ID",
+      "createrName":"String#100#0#1#创建人名",
+      "updaterId":"String#64#0#1#更新人ID",
+      "updaterName":"String#100#0#1#更新人名",
+      "createDate":"Date#0#0#0#创建时间",
+      "updateDate":"Date#0#0#0#更新时间"
+    }
+  },
+  {
+    "OrderItem#订单明细":
+    {
+      "orderId":"String#64#0#0#订单ID",
+      "goodsName":"String#200#0#0#商品",
+      "format":"String#100#0#0#规格",
+      "goodsCost":"BigDecimal#0#0#0#宝贝成本",
+      "goodsPrice":"BigDecimal#0#0#0#宝贝售价",
+      "createDate":"Date#0#0#0#创建时间",
+      "updateDate":"Date#0#0#0#更新时间"
+    }
+  },
+]
+
+
+

@@ -25,8 +25,9 @@ public class GlobalVariables {
 	public static final String ACTION_TEMPLATE_PATH = "./template/action/action.ftl";
 	public static final String VIEW_LIST_TEMPLATE_PATH = "./template/view/list.ftl";
 	public static final String VIEW_EDIT_TEMPLATE_PATH = "./template/view/edit.ftl";
-	public static final String SQL_CREATE_TEMPLATE_PATH = "./template/sql/create.ftl";	
-	
+	public static final String SQL_CREATE_TEMPLATE_PATH = "./template/sql/create.ftl";
+	public static final String SQL_RESOURCE_TEMPLATE_PATH = "./template/sql/resource.ftl";
+
 	public static final String NG_CTRL_TEMPLATE_PATH = "./template/ng-ctrl/ctrl.ftl";
 	public static final String NG_HTML_TEMPLATE_PATH = "./template/ng-html/list.ftl";
 	public static final String NG_REST_TEMPLATE_PATH = "./template/ng-rest/api.ftl";
