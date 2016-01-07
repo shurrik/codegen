@@ -67,8 +67,6 @@
       "name":"String#100#0#0#名称",
       "note":"String#1000#0#0#说明",
       "groupType":"String#100#0#0#分组类型",
-      "bizUnit":"String#100#0#0#业务单元",
-      "bizType":"String#100#0#0#业务类型",
       "status":"Integer#22#0#0#status",
       "templateId":"String#64#0#0#模板ID",
       "iscron":"Boolean#1#0#0#iscron",
@@ -80,11 +78,34 @@
     }
   },
   {
+    "JobBizUnit#作业业务单元":
+    {
+      "jobId":"String#100#0#0#作业ID",
+      "bizUnit":"String#100#0#0#业务单元",
+      "createrId":"String#64#0#1#创建人ID",
+      "createrName":"String#100#0#1#创建人名",
+      "createDate":"Date#0#0#0#创建时间"
+    }
+  },
+  {
+    "JobBizType#作业业务类型":
+    {
+      "jobId":"String#100#0#0#作业ID",
+      "bizType":"String#100#0#0#业务类型",
+      "createrId":"String#64#0#1#创建人ID",
+      "createrName":"String#100#0#1#创建人名",
+      "createDate":"Date#0#0#0#创建时间"
+    }
+  },
+  {
     "Task#任务":
     {
       "jobId":"String#64#0#0#作业ID",
       "status":"String#10#0#0#状态",
       "note":"String#1000#0#0#说明",
+      "returnMsg":"String#2000#0#0#返回消息",
+      "startDate":"Date#0#0#0#开始时间",
+      "endDate":"Date#0#0#0#结束时间",
       "createrId":"String#64#0#1#创建人ID",
       "createrName":"String#100#0#1#创建人名",
       "createDate":"Date#0#0#0#创建时间"
