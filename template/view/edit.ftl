@@ -8,7 +8,7 @@
                 <tbody>
                     <tr>
             <#list classObject.properties as property>
-                <#if property.name!='createDate'&&property.name!='updateDate'>
+                <#if property.name!='createDate'&&property.name!='updateDate'&&property.name!='createrId'&&property.name!='createrName'&&property.name!='updaterId'&&property.name!='updaterName'>
                     <#if property_index gt 0 && property_index%3==0>
                     </tr>
                     <tr>
