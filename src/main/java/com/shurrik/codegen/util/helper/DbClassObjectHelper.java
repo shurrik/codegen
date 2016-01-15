@@ -132,14 +132,34 @@ public class DbClassObjectHelper extends ClassObjecHelper{
 
     public String processTableName(String tableName) {
         tableName = tableName.toLowerCase();
-        if(tableName.startsWith("t_"))//去掉t_
+        ProjectConfig conf = ProjectConfig.getInstance();
+        String dbPrefix = conf.getDbPrefix();
+        if(StringUtils.isNotBlank(dbPrefix))
         {
-            tableName = tableName.substring(2);
+            String[] arr = dbPrefix.split(",");
+            for(String a:arr)
+            {
+                tableName = clearDbPrefix(tableName,a);
+            }
         }
+
+//        if(tableName.startsWith("t_"))//去掉t_
+//        {
+//            tableName = tableName.substring(2);
+//        }
         tableName = CharacterCaseUtils.toCamelCase(tableName);
         return tableName;
     }
 
+
+    private String clearDbPrefix(String tableName,String dbPrefix)
+    {
+        if(tableName.startsWith(dbPrefix))//如去掉t_
+        {
+            tableName = tableName.replace(dbPrefix,"");
+        }
+        return tableName;
+    }
 
 
     public static void main(String[] args) throws SQLException {

@@ -1,17 +1,21 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
 [
-
     {
-        "Task#任务":
+        "Handler#参数策略":
         {
-            "jobId":"String#64#0#0#作业ID",
-            "agentId":"String#64#0#0#代理ID",
-            "clientIp":"String#20#0#0#代理IP",
-            "status":"String#10#0#0#状态",
-            "note":"String#1000#0#0#说明",
-            "returnMsg":"String#2000#0#0#返回消息",
-            "startDate":"Date#0#0#0#开始时间",
-            "endDate":"Date#0#0#0#结束时间",
+            "clazz":"String#100#0#0#类名",
+            "note":"String#500#0#0#说明",
+            "createrId":"String#64#0#1#创建人ID",
+            "createrName":"String#100#0#1#创建人名",
+            "createDate":"Date#0#0#0#创建时间"
+        }
+    },
+    {
+        "TemplateHandler#模板参数策略":
+        {
+            "templateId":"String#64#0#0#模板ID",
+            "clazz":"String#100#0#0#类名",
+            "seq":"Integer#0#0#0#顺序",
             "createrId":"String#64#0#1#创建人ID",
             "createrName":"String#100#0#1#创建人名",
             "createDate":"Date#0#0#0#创建时间"

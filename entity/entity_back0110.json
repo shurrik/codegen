@@ -67,11 +67,13 @@
       "name":"String#100#0#0#名称",
       "note":"String#1000#0#0#说明",
       "groupType":"String#100#0#0#分组类型",
-      "status":"Integer#22#0#0#status",
+      "status":"String#20#0#0#状态",
       "templateId":"String#64#0#0#模板ID",
-      "iscron":"Boolean#1#0#0#iscron",
-      "cronexpr":"String#30#0#1#cronexpr",
-      "isuploadfile":"Boolean#1#0#0#isuploadfile",
+      "iscron":"Boolean#1#0#0#是否定时",
+      "cronexpr":"String#30#0#1#定时表达式",
+      "isuploadfile":"Boolean#1#0#0#是否执行附件",
+      "artifactId":"String#64#0#1#构件ID",
+      "artifactPath":"String#200#0#1#构件文件路径",
       "createrId":"String#64#0#1#创建人ID",
       "createrName":"String#100#0#1#创建人名",
       "createDate":"Date#0#0#0#创建时间"
@@ -101,6 +103,8 @@
     "Task#任务":
     {
       "jobId":"String#64#0#0#作业ID",
+      "agentId":"String#64#0#0#代理ID",
+      "clientIp":"String#20#0#0#代理IP",
       "status":"String#10#0#0#状态",
       "note":"String#1000#0#0#说明",
       "returnMsg":"String#2000#0#0#返回消息",
@@ -133,6 +137,44 @@
       "createrId":"String#64#0#1#创建人ID",
       "createrName":"String#100#0#1#创建人名",
       "createDate":"Date#0#0#0#创建时间"
+    }
+  },
+  {
+    "Agent#代理":
+    {
+      "name":"String#64#0#0#代理名",
+      "ip":"String#50#0#1#ip",
+      "connectKey":"String#64#0#0#验证码",
+      "version":"String#50#0#1#版本",
+      "groupId":"String#64#0#0#分组ID",
+      "bizUnitId":"String#64#0#1#业务单元ID",
+      "bizUnitName":"String#64#0#1#业务单元名称",
+      "enable":"Boolean#1#0#0#是否启用",
+      "createrId":"String#64#0#1#创建人ID",
+      "updateDate":"Date#0#0#0#更新时间",
+      "updaterName":"String#100#0#1#更新人名",
+      "createrName":"String#100#0#1#创建人名",
+      "updaterId":"String#64#0#1#更新人ID",
+      "createDate":"Date#0#0#0#创建时间"
+    }
+  },
+  {
+    "DbServer#数据库":
+    {
+      "dbType":"String#50#0#0#类型",
+      "otherParam":"String#255#0#1#其他参数",
+      "dbAlias":"String#32#0#0#别名",
+      "dbName":"String#50#0#0#库名",
+      "groupId":"String#64#0#0#分组ID",
+      "dbUser":"String#50#0#0#账号",
+      "dbPort":"String#10#0#0#端口",
+      "dbPass":"String#100#0#0#密码",
+      "dbHost":"String#128#0#0#地址",
+      "bizTypeId":"String#64#0#1#业务类型ID",
+      "bizTypeName":"String#64#0#1#业务类型名称",
+      "agentId":"String#64#0#1#代理ID",
+      "createDate":"Date#0#0#0#创建时间",
+      "dbnote":"String#200#0#1#备注"
     }
   },
 ]
