@@ -11,7 +11,7 @@
 <div class="bjui-pageHeader">
     <div class="toolBar">
         <div class="btn-group" role="group" aria-label="操作栏">
-            <a type="utton" class="btn btn-success" href="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/add" data-toggle="navtab" data-id="form"><i class="fa fa-plus"></i>新增</a>
+            <a type="button" class="btn btn-success" href="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/add" data-toggle="navtab" data-id="form"><i class="fa fa-plus"></i>新增</a>
             <a type="button" class="btn btn-danger" href="<@wwwroot/>/${moduleName!}/${classObject.className?lower_case!}/delete?ids={#bjui-selected}" data-toggle="doajax" data-confirm-msg="确定要删除选中项吗？" data-id="form" data-mask="true"><i class="fa fa-trash-o"></i>删除选中行</a>
         </div>
     </div>
