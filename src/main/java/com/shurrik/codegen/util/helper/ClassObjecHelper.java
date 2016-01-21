@@ -31,6 +31,9 @@ public abstract class  ClassObjecHelper {
 			case "Double":
 				columnType = "double";
 				break;
+			case "Long":
+				columnType = "bigint";
+				break;
 			case "BigDecimal":
 				columnType = "decimal";
 				break;
@@ -91,6 +94,7 @@ public abstract class  ClassObjecHelper {
 		map.put("varchar","String");
 		map.put("int","Integer");
 		map.put("float","Float");
+		map.put("bigint","Long");
 		map.put("double","Double");
 		map.put("decimal","BigDecimal");
 		map.put("bit","Boolean");

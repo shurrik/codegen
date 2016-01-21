@@ -1,24 +1,13 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
 [
     {
-        "Handler#参数策略":
+        "version#系统版本":
         {
-            "clazz":"String#100#0#0#类名",
-            "note":"String#500#0#0#说明",
-            "createrId":"String#64#0#1#创建人ID",
-            "createrName":"String#100#0#1#创建人名",
-            "createDate":"Date#0#0#0#创建时间"
-        }
-    },
-    {
-        "TemplateHandler#模板参数策略":
-        {
-            "templateId":"String#64#0#0#模板ID",
-            "clazz":"String#100#0#0#类名",
-            "seq":"Integer#0#0#0#顺序",
-            "createrId":"String#64#0#1#创建人ID",
-            "createrName":"String#100#0#1#创建人名",
-            "createDate":"Date#0#0#0#创建时间"
+            "sysName":"String#50#0#0#系统名称",
+            "sysVersion":"String#10#0#0#系统版本",
+            "buildDate":"Date#0#0#1#构建时间",
+            "copyRight":"String#50#0#1#版权归属",
+            "createDate":"Date#0#0#0#创建日期"
         }
     },
 ]

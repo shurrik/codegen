@@ -7,6 +7,7 @@
 <#macro wwwroot>${r"${wwwroot}"}</#macro>
 <#macro rowfield field>${r"${(row."}${field!}${r")!}"}</#macro>
 <#macro rowfieldDate field>${r"${(row."}${field!}${r"?string('yyyy-MM-dd HH:mm:ss'))!}"}</#macro>
+<#macro rowfieldBoolean field>${r"<#if row."}${field!}${r">是<#else>否</#if>"}</#macro>
 <#macro objfield obj field>${r"${("}${obj!}${r"."}${field}${r")!}"}</#macro>
 <div class="bjui-pageHeader">
     <div class="toolBar">
@@ -47,6 +48,8 @@
 			<#list classObject.properties as property>
              <#if property.type='Date'>
                  <td title="<@rowfieldDate field=property.name/>"><@rowfieldDate field=property.name/></td>
+             <#elseif property.type='Boolean'>
+                 <td><@rowfieldBoolean field=property.name/></td>
              <#else>
                  <td title="<@rowfield field=property.name/>"><@rowfield field=property.name/></td>
              </#if>
