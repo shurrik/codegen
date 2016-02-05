@@ -1,13 +1,11 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
 [
     {
-        "version#系统版本":
+        "DbType#数据库类型":
         {
-            "sysName":"String#50#0#0#系统名称",
-            "sysVersion":"String#10#0#0#系统版本",
-            "buildDate":"Date#0#0#1#构建时间",
-            "copyRight":"String#50#0#1#版权归属",
-            "createDate":"Date#0#0#0#创建日期"
+            "typeName":"String#50#0#1#数据库类型",
+            "note":"String#50#0#1#备注",
+            "createDate":"Date#0#0#0#创建时间"
         }
     },
 ]
