@@ -1,10 +1,19 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
 [
     {
-        "DbType#数据库类型":
+        "Server#服务器":
         {
-            "typeName":"String#50#0#1#数据库类型",
-            "note":"String#50#0#1#备注",
+            "alias":"String#32#0#0#别名",
+            "agentId":"String#64#0#1#代理ID",
+            "groupType":"String#20#0#0#分组类型",
+            "bizTypeId":"String#64#0#1#业务类型ID",
+            "bizTypeName":"String#64#0#1#业务类型名称",
+            "opSystem":"String#100#0#1#操作系统",
+            "sysRank":"String#100#0#1#系统级别",
+            "host":"String#50#0#0#地址",
+            "user":"String#50#0#0#账号",
+            "pass":"String#50#0#0#密码",
+            "note":"String#200#0#1#备注",
             "createDate":"Date#0#0#0#创建时间"
         }
     },
