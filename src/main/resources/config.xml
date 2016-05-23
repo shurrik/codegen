@@ -32,14 +32,17 @@
 		</property>
 		<property name="url">
 			<!--<value>jdbc:mysql://10.238.6.92:3306/ci</value>-->
+			<!--<value>jdbc:mysql://10.238.6.146:3306/ci</value>-->
 			<value>jdbc:mysql://localhost:3306/ci</value>
 		</property>
 		<property name="username">
 			<!--<value>lp</value>-->
+			<!--<value>ci</value>-->
 			<value>root</value>
 		</property>
 		<property name="password">
 			<!--<value>lp</value>-->
+			<!--<value>ci!@#</value>-->
 			<value>root</value>
 		</property>
 		<property name="initialSize">

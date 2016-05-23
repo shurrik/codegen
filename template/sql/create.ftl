@@ -6,7 +6,6 @@ CREATE TABLE `${(classObject.tableName)!}` (
   `${column.name}` ${column.type}<#if (column.length != '0')>(${column.length})</#if> COLLATE utf8_general_ci <#if column.notNull>NOT<#else>DEFAULT</#if> NULL COMMENT '${column.comment}',
   </#list>
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='${(classObject.classRemark)!}';
 </#list>
               

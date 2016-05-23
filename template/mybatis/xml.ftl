@@ -50,10 +50,12 @@
         UPDATE ${(classObject.tableName)!}
         <trim prefix="SET" suffixOverrides=",">
           <#list classObject.columns as column>
-          <if test="${column.proName!}!=null">
-           ${column.name!}=<@proname name = column.proName />,
-          </if>
-		  </#list>  
+              <#if column.proName!='createDate'>
+                  <if test="${column.proName!}!=null">
+                  ${column.name!}=<@proname name = column.proName />,
+                  </if>
+              </#if>
+		  </#list>
         </trim>
         WHERE
         id =<@id/>
