@@ -29,6 +29,7 @@ public class ProjectConfig {
 	private String tablePrefix;
 	private String author;
 	private String dbPrefix;
+	private String projectPath;
 
 	public void loadProperties(){
 		try {
@@ -52,6 +53,9 @@ public class ProjectConfig {
 			}
 			if(p.getProperty("dbprefix")!=null){
 				this.setDbPrefix(p.getProperty("dbprefix"));
+			}
+			if(p.getProperty("projectpath")!=null){
+				this.setProjectPath(p.getProperty("projectpath"));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -96,5 +100,13 @@ public class ProjectConfig {
 
 	public void setDbPrefix(String dbPrefix) {
 		this.dbPrefix = dbPrefix;
+	}
+
+	public String getProjectPath() {
+		return projectPath;
+	}
+
+	public void setProjectPath(String projectPath) {
+		this.projectPath = projectPath;
 	}
 }
