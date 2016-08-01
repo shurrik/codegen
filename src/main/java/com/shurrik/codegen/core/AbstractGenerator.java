@@ -65,6 +65,8 @@ public abstract class AbstractGenerator {
         generateNgRouter(model);
         generateNgNav(model);
         generateEntityJson(model);
+        model.put("conf", conf);
+        generateBat(model);
     }
 
     public  void generateEntity(Map<String, Object> model) throws IOException, TemplateException
@@ -239,5 +241,14 @@ public abstract class AbstractGenerator {
         String content = fmHelper.render(model, GlobalVariables.ENTITY_JSON_TEMPLATE_PATH);
         String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_ENTITY_JSON_PATH.toLowerCase();
         fileHelper.createFile(outputPath, "entity", content, "json");
+    }
+
+    public  void generateBat(Map<String, Object> model) throws IOException, TemplateException
+    {
+        FileHelper fileHelper = new FileHelper();
+        FreeMarkerHelper fmHelper = new FreeMarkerHelper();
+        String content = fmHelper.render(model, GlobalVariables.BAT_TEMPLATE_PATH);
+        String outputPath = GlobalVariables.OUTPUT_ROOTPATH+GlobalVariables.OUTPUT_BAT_PATH.toLowerCase();
+        fileHelper.createFile(outputPath, "move", content, "bat");
     }
 }

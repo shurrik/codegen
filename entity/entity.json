@@ -1,16 +1,17 @@
 /*字段说明：1属性类型;2表字段长度，为0表示不需要长度;3是否主键;4允许为空;5注释*/
+/*  createDate是必须字段
+ */
 [
-
     {
-        "LogFile#日志文件":
+        "Book#书籍":
         {
-            "taskId":"String#64#0#0#任务ID",
-            "name":"String#200#0#0#文件名称",
-            "path":"String#200#0#0#文件路径",
+            "name":"String#100#0#0#书名",
+            "price":"Integer#11#0#0#价格",
             "createDate":"Date#0#0#0#创建时间"
         }
-    },
+    }
 ]
+
 
 
 

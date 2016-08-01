@@ -36,6 +36,8 @@ public class GlobalVariables {
 	public static final String NG_NAV_TEMPLATE_PATH = "./template/ng-nav/nav.ftl";
 
 	public static final String ENTITY_JSON_TEMPLATE_PATH = "./template/entity/entity.ftl";
+
+	public static final String BAT_TEMPLATE_PATH = "./template/bat/bat.ftl";
 	
 	public static final String OUTPUT_RELATIVE_ENTITY_PATH="/model/";
 	public static final String OUTPUT_RELATIVE_DAO_PATH="/dao/"; 
@@ -53,5 +55,6 @@ public class GlobalVariables {
 	public static final String OUTPUT_NG_NAV_PATH="/ng-nav/";
 	public static final String OUTPUT_RELATIVE_SQL_PATH="/sql/";
 	public static final String OUTPUT_ENTITY_JSON_PATH="/entity/";
+	public static final String OUTPUT_BAT_PATH="/bat/";
 }
 
