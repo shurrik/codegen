@@ -15,7 +15,7 @@
                     </#if>
                         <td>
                             <label for="${(property.name)!}" class="control-label x85">${(property.comment)!}：</label>
-                            <input type="text" name="${(property.name)!}" id="${(property.name)!}" value="${r"${("}${classObject.className?uncap_first!}${r"."}${property.name}${r")!}"}" <#if property.notNull>data-rule="required"</#if> >
+                            <input type="text" name="${(property.name)!}" id="${(property.name)!}" value="${r"${("}${classObject.className?uncap_first!}${r"."}${property.name}${r")!}"}" <#if property.type=='String'>maxlength="${(property.size)!}"</#if> <#if property.notNull><#if property.type=='Integer'>data-rule="digits"<#else>data-rule="required"</#if></#if> >
                         </td>
                 </#if>
             </#list>
